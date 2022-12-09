@@ -14,13 +14,13 @@ const Play = () => {
         // setLoading(true)
         const options = {
             method: 'GET',
-            url: '/api/posts/',
+            url: 'https://xr-speeds-production.up.railway.app/',
           }
 
         axios.request(options)
         .then(response => {
             console.log(response)
-            setCarz([...response.data.posts])
+            // setCarz([...response.data.posts])
             // console.log(response.data)
             setLoading(false)
 
