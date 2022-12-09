@@ -10,10 +10,7 @@ import RecentNewsletter from '../components/RecentNewsletter'
 import RecentPodcast from '../components/RecentPodcast'
 // import Subscribe from '../components/Subscribe'
 import styles from '../styles/Home.module.css'
-// import AddNewBook from '@/components/AddNewBook'
-import Form from '@/components/Form'
-import FormUpdate from '@/components/FormUpdate'
-import FormDelete from '@/components/FormDelete'
+import Playpost from '@/components/Playpost'
 
 const data = {
   title : "Read Newsletters",
@@ -40,11 +37,7 @@ export default function Home() {
           <Footer />
         </main>
         <Play />
-        {/* <AddNewBook /> */}
-        {/* <Playpost /> */}
-        <Form />
-        <FormUpdate />
-        <FormDelete />
+        <Playpost />
       </div>
   )
 }
