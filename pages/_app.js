@@ -1,13 +1,21 @@
 import '../styles/globals.css'
-import { AnimatePresence, motion } from "framer-motion";
 import { ChakraProvider } from '@chakra-ui/react'
-import { useRouter} from 'next/router';
+// import { useRouter} from 'next/router';
 import theme from '../utils/theme';
 
 function MyApp({ Component, pageProps }) {
 
-  const router = useRouter()
-  return<AnimatePresence mode='wait'>
+  // const router = useRouter()
+  return <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+
+}
+
+export default MyApp
+
+
+{/* <AnimatePresence mode='wait'>
       <motion.div
       key={router.route}
       initial="intialState"
@@ -27,12 +35,5 @@ function MyApp({ Component, pageProps }) {
           background : "black"
         }
       }}
-      >
-        <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
-        </ChakraProvider>
-      </motion.div>
-  </AnimatePresence>
-}
-
-export default MyApp
+      ></motion.div>
+  </AnimatePresence> */}

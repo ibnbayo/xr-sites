@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Community from '../components/Community'
-import Play from '../components/Play'
 import Footer from '../components/Footer'
 import Glimpse from '../components/Glimpse'
 import Hero from '../components/Hero'
@@ -10,13 +9,15 @@ import RecentNewsletter from '../components/RecentNewsletter'
 import RecentPodcast from '../components/RecentPodcast'
 // import Subscribe from '../components/Subscribe'
 import styles from '../styles/Home.module.css'
-import Playpost from '@/components/Playpost'
+
 
 const data = {
   title : "Read Newsletters",
 }
 
-export default function Home() {
+export default function Home({recent}) {
+
+  console.log(recent)
   return (
       <div className={styles.container}>
         <Head>
@@ -32,12 +33,23 @@ export default function Home() {
           <Information />
           <RecentPodcast />
           <Glimpse />
-          <RecentNewsletter data={data}/>
+          <RecentNewsletter data={data} recent={recent}/>
           <Community />
           <Footer />
         </main>
-        <Play />
-        <Playpost />
       </div>
   )
 }
+
+// export async function getStaticProps(){
+//   try {
+//       const fetchingData = await axios.get("http://xr-speeds-production.up.railway.app/recent")
+//       const response = fetchingData.data;
+//       // console.log(response)
+//       return { 
+//           props : { recent : response }
+//        }
+//   } catch (error) {
+//       console.log(error)
+//   }
+// }

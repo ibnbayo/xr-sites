@@ -28,6 +28,15 @@
     border: 1px solid #3F4753;
     padding: 1em;
     border-radius: 10px;
+    cursor: pointer;
+    min-height: 332px;
+}
+.item .postImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
 }
 .item h4{
     font-family: 'carbinet';
